@@ -63,7 +63,7 @@ class SearchLinks(generics.ListAPIView):
 
 class AddLink(CreateView):
     model = Link
-    form_class = LinkForm
+    form_class = LinkForm  # Use your LinkForm
     template_name = 'add_link.html'
     success_url = reverse_lazy('add-link')  # Redirect to the same page after successful form submission
 
