@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Link{% endblock %}
+
+{% block content %}
+
+    <form method="post" action="{% url 'add-link' %}" class="mb-4">
+        {% csrf_token %}
+        {% if success_message %}
+            <p>{{ success_message }}</p>
+        {% endif %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn btn-primary">Add Link</button>
+    </form>
+{% endblock %}
